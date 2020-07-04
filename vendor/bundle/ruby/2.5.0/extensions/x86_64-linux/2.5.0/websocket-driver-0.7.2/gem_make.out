@@ -1,0 +1,15 @@
+current directory: /var/www/Bookers/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.2/ext/websocket-driver
+/home/ec2-user/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20200704-19154-1374vv9.rb extconf.rb
+creating Makefile
+
+current directory: /var/www/Bookers/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.2/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /var/www/Bookers/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.2/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /var/www/Bookers/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.2/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20200704-19154-187w514
