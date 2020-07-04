@@ -1,16 +1,7 @@
 <div class="container">
-  <% if @new_book.errors.any? %>
-    <div class="row">
-      <%= @new_book.errors.count %>errors prohibited this obj from being saved:<br>
-      <ul>
-        <% @new_book.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'layouts/error_messages', obj: @new_book %>
   <div class="row">
-    <%= render 'layouts/user_info', user: @user, book: @new_book %>
+    <%= render 'layouts/user_info', user: current_user %>
     <div class="col-xs-9">
       <h2>Books</h2>
       <table class="table">

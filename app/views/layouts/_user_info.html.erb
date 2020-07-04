@@ -15,13 +15,13 @@
   </table>
   <div class="row">
     <% if user.id == current_user.id %>
-      <%= link_to "", edit_user_path(user.id), class: 'col-xs-12 btn btn-default glyphicon glyphicon-wrench' %>
+      <%= link_to '', edit_user_path(user.id), class: 'col-xs-12 btn btn-default glyphicon glyphicon-wrench' %>
     <% else %>
-      <%= link_to "", user_path(current_user.id), class: 'col-xs-12 btn btn-default glyphicon glyphicon-wrench' %>
+      <%= link_to '', user_path(current_user.id), class: 'col-xs-12 btn btn-default glyphicon glyphicon-wrench' %>
     <% end %>
   </div>
   <h2>New book</h2>
-  <%= form_for book do |f| %>
+  <%= form_for Book.new do |f| %>
     <div class="field row">
       <%= f.label :title, "Title" %>
       <%= f.text_field :title, class: "col-xs-12 book_title" %>

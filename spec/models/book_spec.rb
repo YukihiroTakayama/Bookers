@@ -1,31 +1,41 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe 'Bookモデルのテスト', type: :model do
-  describe 'バリデーションのテスト' do
-    let(:user) { create(:user) }
+RSpec.describe Book, type: :model do
+  describe 'Validation' do
+    let!(:user) { create(:user) }
     let!(:book) { build(:book, user_id: user.id) }
 
-    context 'titleカラム' do
-      it '空欄でないこと' do
-        book.title = ''
-        expect(book.valid?).to eq false;
+    subject { book.valid? }
+
+    context 'バリデーションチェックの要件を満たす場合' do
+      it { is_expected.to be_truthy }
+    end
+    describe 'title' do
+      context '入力がない場合' do
+        before { book.title = '' }
+
+        it { is_expected.to be_falsey }
       end
     end
-    context 'bodyカラム' do
-      it '空欄でないこと' do
-        book.body = ''
-        expect(book.valid?).to eq false;
+    describe 'body' do
+      context '入力がない場合' do
+        before { book.body = '' }
+
+        it { is_expected.to be_falsey }
       end
-      it '200文字以下であること' do
-        book.body = Faker::Lorem.characters(number:201)
-        expect(book.valid?).to eq false;
+      context '201文字以上の場合' do
+        before { book.body = Faker::Lorem.characters(number: 201) }
+
+        it { is_expected.to be_falsey }
       end
     end
-  end
-  describe 'アソシエーションのテスト' do
-    context 'Userモデルとの関係' do
-      it 'N:1となっている' do
-        expect(Book.reflect_on_association(:user).macro).to eq :belongs_to
+    describe 'Association' do
+      describe 'User' do
+        it 'ユーザーに対して従属関係にあること' do
+          expect(described_class.reflect_on_association(:user).macro).to eq :belongs_to
+        end
       end
     end
   end
