@@ -1,0 +1,22 @@
+current directory: /var/www/Bookers/vendor/bundle/ruby/2.5.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+/home/ec2-user/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20200704-19154-yx6k7u.rb extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /var/www/Bookers/vendor/bundle/ruby/2.5.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make "DESTDIR=" clean
+
+current directory: /var/www/Bookers/vendor/bundle/ruby/2.5.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make "DESTDIR="
+compiling unf.cc
+cc1plus: 警告: コマンドラインオプション ‘-Wimplicit-int’ は C/ObjC 用としては有効ですが、C++ 用としては有効ではありません
+cc1plus: 警告: コマンドラインオプション ‘-Wdeclaration-after-statement’ は C/ObjC 用としては有効ですが、C++ 用としては有効ではありません
+cc1plus: 警告: コマンドラインオプション ‘-Wimplicit-function-declaration’ は C/ObjC 用としては有効ですが、C++ 用としては有効ではありません
+cc1plus: 警告: 認識できないコマンドラインオプション ‘-Wno-self-assign’ です
+cc1plus: 警告: 認識できないコマンドラインオプション ‘-Wno-constant-logical-operand’ です
+cc1plus: 警告: 認識できないコマンドラインオプション ‘-Wno-parentheses-equality’ です
+linking shared-object unf_ext.so
+
+current directory: /var/www/Bookers/vendor/bundle/ruby/2.5.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20200704-19154-1y67miz
